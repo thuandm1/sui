@@ -124,7 +124,7 @@
         "tweetnacl": "^1.0.3",
         "uuid": "^8.3.2",
         "vite-tsconfig-paths": "^3.5.0",
-        "webextension-polyfill": "^0.9.0",
+        "webextension-polyfill": "^0.10.0",
         "yup": "^0.32.11",
         "zxcvbn": "^4.4.2"
     }
