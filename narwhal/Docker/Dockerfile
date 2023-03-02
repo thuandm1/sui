@@ -71,7 +71,7 @@ RUN cargo build --${BUILD_MODE} --features ${FEATURES} --bin narwhal-node --bin 
 #################################################################
 
 # Creat another layer so we can re-use caching
-FROM debian:bullseye-slim
+FROM debian:11.6-slim
 ARG BUILD_MODE
 
 WORKDIR "$WORKDIR/sui"
