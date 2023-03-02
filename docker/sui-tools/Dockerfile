@@ -46,7 +46,7 @@ RUN cargo build --release \
     --bin sui-cluster-test
 
 # Production Image
-FROM debian:bullseye-slim AS runtime
+FROM debian:11.6-slim AS runtime
 WORKDIR sui
 COPY --from=builder /sui/target/release/sui-node /usr/local/bin
 COPY --from=builder /sui/target/release/sui /usr/local/bin
