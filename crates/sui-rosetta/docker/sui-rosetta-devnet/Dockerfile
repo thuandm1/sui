@@ -1,4 +1,4 @@
-FROM ubuntu:latest AS chef
+FROM ubuntu:22.10 AS chef
 WORKDIR sui
 ARG GIT_REVISION
 ENV GIT_REVISION=$GIT_REVISION
@@ -15,7 +15,7 @@ RUN curl -fLJO https://github.com/MystenLabs/sui-genesis/raw/main/devnet/genesis
 RUN cargo build --release --bin sui --bin sui-rosetta
 
 # Production Image
-FROM ubuntu:latest AS runtime
+FROM ubuntu:22.10 AS runtime
 WORKDIR sui
 COPY --from=builder /sui/target/release/sui /usr/local/bin
 COPY --from=builder /sui/target/release/sui-rosetta /usr/local/bin
