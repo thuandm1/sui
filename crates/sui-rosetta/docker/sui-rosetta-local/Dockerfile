@@ -1,4 +1,4 @@
-FROM ubuntu:latest AS chef
+FROM ubuntu:kinetic AS chef
 WORKDIR sui
 ARG GIT_REVISION
 ENV GIT_REVISION=$GIT_REVISION
@@ -43,7 +43,7 @@ COPY narwhal narwhal
 RUN cargo build --release --bin sui --bin sui-rosetta
 
 # Production Image
-FROM ubuntu:latest AS runtime
+FROM ubuntu:kinetic AS runtime
 WORKDIR sui
 COPY --from=builder /sui/target/release/sui /usr/local/bin
 COPY --from=builder /sui/target/release/sui-rosetta /usr/local/bin
